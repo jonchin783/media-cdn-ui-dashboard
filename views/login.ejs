@@ -1,0 +1,56 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+
+<head>
+    <title>Google Cloud Healthcare API Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+
+    <style>
+    html {
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="containern d-flex">
+        <div data-radium="true" style="color: rgb(51, 51, 51); background:url(/images/gcp.jpeg) ; background-size:cover; background-position:center center; font-family: CiscoSans, Arial, sans-serif; font-size: 1rem;position:fixed; height: 100vh; width: 100vw;" id="id.login-card">
+            <div data-radium="true" style="background: rgba(255, 255, 255,0.75); margin: 0px auto; padding: 1rem 5rem; position: relative; top: 50%; transform: translateY(-50%); max-width: 40rem;" id="id.login-int-card">
+                <div data-radium="true" style="color: rgb(87, 89, 93); font-family:  Arial; font-size: 2.4rem; text-align: center; margin-top: 1rem; margin-bottom: 0.2rem;">Global Public Sector</div>
+                <div data-radium="true" style="color: rgb(87, 89, 93); font-family:  Arial; font-style:italic; font-size: 1.0rem; text-align: center; margin-top: 0.2rem; margin-bottom: 0.1rem;">Healthcare Natural Language Processing Demo</div>
+
+            <% if (message.length > 0) { %>
+                    <div class="alert alert-danger">
+                        <%= message %>
+                    </div>
+                <% } %>
+                <form action="/login" method="post" class="text-center">
+                    <div class="form-group">
+                        <!--  <label>Username</label> -->
+                        <input type="text" placeholder="Username" style="text-align: center;" class="form-control" name="username" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label>Password</label> -->
+                        <input type="password" placeholder="Password" style="text-align: center;" class="form-control" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

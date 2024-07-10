@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<!-- Head content -->
+<%- include('partials/head-content.ejs')%>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Homepage - Semantic</title>
+    <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+    <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+    <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+    <style type="text/css">
+
+        .hidden.menu {
+            display: none;
+        }
+
+        .masthead.segment {
+            min-height: 700px;
+            padding: 1em 0em;
+        }
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+        }
+        .masthead h1.ui.header {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
+
+        .ui.vertical.stripe {
+            padding: 8em 0em;
+        }
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+        .ui.vertical.stripe .button + h3,
+        .ui.vertical.stripe p + h3 {
+            margin-top: 3em;
+        }
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+            .masthead.segment {
+                min-height: 350px;
+            }
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+    </style>
+
+    <script src="assets/library/jquery.min.js"></script>
+    <script src="../dist/components/visibility.js"></script>
+    <script src="../dist/components/sidebar.js"></script>
+    <script src="../dist/components/transition.js"></script>
+    <script>
+        $(document)
+            .ready(function() {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    })
+                ;
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item')
+                ;
+
+            })
+        ;
+    </script>
+</head>
+<body>
+<!-- Left Sidebar -->
+<%- include("partials/left-sidebar.ejs") %>
+
+<div class="pusher" id="main-content">
+    <!-- Top Fixed Menu -->
+    <%- include("partials/top-menu.ejs",{title:"Google Cloud Media CDN"}); %>
+    <!-- Page Content -->
+    <div class="ui basic segment" style="top:50px">
+        <div class="row">
+            <div class="thirteen wide column">
+                <h2 class="ui top attached header" id="google-healthcare-api-top-field" style="background-color: #f8f8f8">
+                    <img src="/images/sea-group-icon.png">
+                    <div class="content">
+                        Media CDN API
+                        <div id="div1" class="sub header">A simple user dashboard based on Media CDN API</div>
+                    </div>
+                </h2>
+		        <div class="thirteen wide column" id="top-level-tenant-active-services-table">
+                    <div class="ui bottom attached segment">
+                        <div class="ui internally celled grid">
+                            <div class="row">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="ui form" id="media-cdn-main-form">
+                    <div id="context1">
+                        <div class="ui tab segment" data-tab="first">
+                            <div class="ui top attached tabular menu">
+                                <a class="active item" data-tab="first/a">Edge Cache Services</a>
+                                <a class="item" data-tab="first/b">Edge Cache Origins</a>
+                                <a class="item" data-tab="first/c">SSL Certificates</a>
+                            </div>
+                        </div>
+                        <div class="ui tab segment active" data-tab="second">
+                            <div class="ui top attached tabular menu">
+                                <a class="item active" data-tab="second/a"><i class="blue cloud download icon"></i>Edge Cache Services</a>
+                                <a class="item" data-tab="second/b"><i class="blue bitbucket icon"></i>Edge Cache Origins</a>
+                                <a class="item" data-tab="second/c"><i class="blue lock icon"></i>SSL Certificates</a>
+                            </div>
+                            <div class="ui bottom attached tab segment active" data-tab="second/a">
+                                <div>
+                                <table id="edge-cache-services-table" class="ui selectable celled compact striped single line small table display">
+                                    <thead>
+                                    <tr>
+                                        <th>Service Name</th>
+                                        <th>Hosts</th>
+                                        <th>IPv4</th>
+                                        <th>IPv6</th>
+                                        <th>SSL Certificate</th>
+                                        <th>Create Time</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                                </div>
+                                <h4 class="ui dividing header">Edit Edge Cache Service</h4>
+                                <div class="fields">
+                                    <div class="two wide field" id="abId0.6790173127833441" data-tooltip="Select a Media CDN Edge Cache Service" data-position="top left" required>
+                                        <label><i class="blue cloud download icon"></i>Edge Cache Service</label>
+                                        <select class="ui search dropdown selection" id="edge-cache-service-dropdown" name="edge-cache-service-dropdown">
+                                            <option value="Choose">Choose an Edge Cache service</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="ui blue button" id="create-tenant-button" tabindex="0">Create Tenant</div>
+                                <div class="ui button" onclick="window.location.href='/tenant'" tabindex="1">Cancel</div>
+                                <div class="ui blue button" id="test-button" tabindex="2">Test</div>
+                            </div>
+                            <div class="ui bottom attached tab segment" data-tab="second/b">
+                                <table id="edge-cache-origins-table" class="ui selectable celled compact striped single line small table display">
+                                    <thead>
+                                    <tr>
+                                        <th>Origin Name</th>
+                                        <th>Origin Address</th>
+                                        <th>Failover Origin</th>
+                                        <th>Origin Override Action</th>
+                                        <th>Create Time</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                                <h4 class="ui dividing header">Edit Edge Cache Origin</h4>
+                                <div class="fields">
+                                    <div class="two wide field" id="abId0.6790173127833441" data-tooltip="Select a Media CDN Edge Cache Origin" data-position="top left" required>
+                                        <label><i class="blue bitbucket icon"></i>Edge Cache Origin</label>
+                                        <select class="ui search dropdown selection" id="edge-cache-origin-dropdown" name="edge-cache-origin-dropdown">
+                                            <option value="Choose">Choose an Edge Cache origin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui bottom attached tab segment " data-tab="second/c">
+                                <h4 class="ui dividing header">SSL Certificates</h4>
+                                <div class="grouped fields">
+                                    <label>Control Plane Hostname</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui tab segment" data-tab="third">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <h4 class="ui horizontal divider header" id="services_div"></h4>
+    <h4 class="ui horizontal divider" id="services_div"></h4>
+    <h4 class="ui horizontal divider header" id="services_div"></h4>
+    <h4 class="ui horizontal divider" id="services_div"></h4>
+    <div class="spinner" id="sole_spinner" style="display:none"></div>
+</div>
+
+<!-- Java Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.semanticui.min.js"></script>
+    <script type="text/javascript" src="/js/Semantic-UI-Alert.js"></script>
+    <script src="/js/load-nlp.js"></script>
+</body>
+
+</html>
+
